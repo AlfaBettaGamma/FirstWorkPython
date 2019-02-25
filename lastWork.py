@@ -1,6 +1,6 @@
 # Задача 17.3
 import random
-
+ 
 
 class Combat:
     Nick = "Alex"
@@ -42,6 +42,12 @@ class Mage(Combat):
         print("Переопределение из класса Mage")
         return 50
 
+class Warrior(Combat):
+    Russ = "Elf"
+
+    def get_lvl(self):
+        print("Переопределение из класса Mage")
+        return 28
 
 user1 = Mage(600, 10)
 user1.Nick = "Bill"
@@ -55,10 +61,16 @@ user2.set_attack(56)
 user2.Russ = "Human"
 user2.lvlUp(50)
 
+user3 = Warrior(2500, 70)
+user3.Nick = "Garry"
+user3.set_attack(46)
+user3.Russ = "Elf"
+user3.lvlUp(60)
+
 print(
-"user1 lvl - ", user1.get_lvl(), ", user2 lvl - ", user2.get_lvl(), " \n", "user1 hp  - ", user1.HP, ", user2 hp - ",
-user2.HP, " \n", "user1 armor - ", user1.Armor, ", user2 armor - ", user2.Armor)
-print("user1 attack - ", user1.get_attack(), ", user2 attack - ", user2.get_attack())
+"user1 lvl - ", user1.get_lvl(), ", user2 lvl - ", user2.get_lvl(), ", user3 lvl - ", user3.get_lvl(), " \n", "user1 hp  - ", user1.HP, ", user2 hp - ",
+user2.HP, ", user3 hp - ", user3.HP, " \n", "user1 armor - ", user1.Armor, ", user2 armor - ", user2.Armor, ", user3 armor - ", user3.Armor)
+print("user1 attack - ", user1.get_attack(), ", user2 attack - ", user2.get_attack(), ", user3 attack - ", user3.get_attack())
 
 lo = []
 for i in range(10):
